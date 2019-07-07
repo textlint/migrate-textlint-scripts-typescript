@@ -18,18 +18,22 @@
   },
   "license": "MIT",
   "author": "azu",
+  "bin": {
+    "migrate-textlint-scripts-typescript": "./bin/migrate-textlint-scripts-typescript.js"
+  },
+  "main": "bin/migrate-textlint-scripts.js",
+  "scripts": {
+    "test": "bash test/test.sh"
+  },
+
   "files": [
     "bin/",
     "lib/",
     "src/"
   ],
-  "main": "lib/migrate-textlint-scripts-typescript.js",
   "directories": {
     "lib": "lib",
     "test": "test"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "publishConfig": {
     "access": "public"
