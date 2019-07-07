@@ -1,6 +1,6 @@
 {
   "name": "@textlint/migrate-textlint-scripts-typescript",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Migrate textlint-scripts to TypeScript version.",
   "keywords": [
     "migrate",
@@ -25,7 +25,6 @@
   "scripts": {
     "test": "bash test/test.sh"
   },
-
   "files": [
     "bin/",
     "lib/",
