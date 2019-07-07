@@ -60,7 +60,7 @@ if (fs.existsSync(mochaOptPath)) {
 // copy tsconfig.json
 const tsconfigFilePath = path.join(__dirname, "../config/tsconfig.json");
 cpFile.sync(tsconfigFilePath, path.join(process.cwd(), "tsconfig.json"));
-log(`✔ Copy tsconfig.json}`);
+log(`✔ Copy tsconfig.json`);
 // Complete
 
 // Complete
