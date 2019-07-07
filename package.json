@@ -1,6 +1,6 @@
 {
   "name": "@textlint/migrate-textlint-scripts-typescript",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Migrate textlint-scripts to TypeScript version.",
   "keywords": [
     "migrate",
