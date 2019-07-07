@@ -36,7 +36,7 @@ const npe = function (key, value) {
 // Exist config files
 const mochaOptPath = path.join(process.cwd(), "test", "mocha.opts");
 log(`Package Manager: ${USE_YARN ? "yarn" : "npm"}`);
-const INSTALL_COMMAND = USE_YARN ? "yarn install --dev" : "npm install --save-dev";
+const INSTALL_COMMAND = USE_YARN ? "yarn add --dev" : "npm install --save-dev";
 const UNINSTALL_COMMAND = USE_YARN ? "yarn remove --dev" : "npm uninstall --save-dev";
 // Install textlint-scripts
 exec(`${INSTALL_COMMAND} typescript ts-node @textlint/types`);
