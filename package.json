@@ -38,6 +38,7 @@
     "access": "public"
   },
   "dependencies": {
+    "cp-file": "^7.0.0",
     "meow": "^5.0.0",
     "npe": "^1.1.3",
     "shelljs": "^0.8.3"
