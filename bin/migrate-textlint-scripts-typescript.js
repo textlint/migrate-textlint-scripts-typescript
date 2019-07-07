@@ -4,6 +4,7 @@ const path = require("path");
 const shelljs = require("shelljs");
 const npeBin = require.resolve(".bin/npe");
 const meow = require('meow');
+const cpFile = require('cp-file');
 const cli = meow(`
     Usage
       $ npx @textlint/migrate-textlint-scripts-typescript
@@ -56,5 +57,11 @@ if (fs.existsSync(mochaOptPath)) {
     fs.writeFileSync(mochaOptPath, replaced, "utf-8");
     log(`✔ Rewrite ${mochaOptPath}`);
 }
+// copy tsconfig.json
+const tsconfigFilePath = path.join(__dirname, "../config/tsconfig.json");
+cpFile.sync(tsconfigFilePath, path.join(process.cwd(), "tsconfig.json"));
+log(`✔ Copy tsconfig.json}`);
+// Complete
+
 // Complete
 log("✔ Complete!");
