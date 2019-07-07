@@ -1,4 +1,5 @@
-# @textlint/migrate-textlint-scripts-typescript
+# @textlint/migrate-textlint-scripts-typescript [![Build Status](https://travis-ci.org/textlint/migrate-textlint-scripts-typescript.svg?branch=master)](https://travis-ci.org/textlint/migrate-textlint-scripts-typescript)
+
 
 Migrate [textlint-scripts](https://github.com/textlint/textlint-scripts) to TypeScript version.
 
