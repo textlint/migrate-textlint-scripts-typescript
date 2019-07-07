@@ -15,12 +15,12 @@ const cli = meow(`
     Examples
       $ npx @textlint/migrate-textlint-scripts-typescript --yarn
 `, {
-    flags: {
-        yarn: {
-            type: 'boolean'
+        flags: {
+            yarn: {
+                type: 'boolean'
+            }
         }
-    }
-});
+    });
 const USE_YARN = cli.flags.yarn;
 const log = function (message) {
     console.info(message);
@@ -47,15 +47,15 @@ npe("scripts.watch", "textlint-scripts build --watch");
 npe("scripts.test", "textlint-scripts test");
 // Modify mocha.opts
 if (fs.existsSync(mochaOptPath)) {
+    // Avoid duplicated regster ts-node
+    // It will occur compile error like 
+    //  error TS7006: Parameter 'obj' implicitly has an 'any' type.
     const mochaOptsContent = fs.readFileSync(mochaOptPath, "utf-8");
-    const replaced = mochaOptsContent
-        .replace("--compilers js:babel-register", "--require textlint-scripts/register-ts")
-        .replace("--compilers js:@babel/register", "--require textlint-scripts/register-ts")
-        .replace("--require babel-register", "--require textlint-scripts/register-ts")
-        .replace("--require @babel/register", "--require textlint-scripts/register-ts")
-        .replace("--require textlint-scripts/register", "--require textlint-scripts/register-ts");
-    fs.writeFileSync(mochaOptPath, replaced, "utf-8");
-    log(`✔ Rewrite ${mochaOptPath}`);
+    const hasTextlintScripts = mochaOptsContent.includes("textlint-scripts/register");
+    if (hasTextlintScripts) {
+        shelljs.rm(mochaOptPath);
+        log(`✔ Remove ${mochaOptPath}`);
+    }
 }
 // copy tsconfig.json
 const tsconfigFilePath = path.join(__dirname, "../config/tsconfig.json");
