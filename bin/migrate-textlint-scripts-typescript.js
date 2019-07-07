@@ -40,7 +40,7 @@ log(`Package Manager: ${USE_YARN ? "yarn" : "npm"}`);
 const INSTALL_COMMAND = USE_YARN ? "yarn add --dev" : "npm install --save-dev";
 const UNINSTALL_COMMAND = USE_YARN ? "yarn remove --dev" : "npm uninstall --save-dev";
 // Install textlint-scripts
-exec(`${INSTALL_COMMAND} typescript ts-node @textlint/types`);
+exec(`${INSTALL_COMMAND} typescript ts-node @textlint/types @types/node`);
 // Modify package.json
 npe("scripts.build", "textlint-scripts build");
 npe("scripts.watch", "textlint-scripts build --watch");
