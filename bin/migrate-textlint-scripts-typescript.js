@@ -6,13 +6,13 @@ const npeBin = require.resolve(".bin/npe");
 const meow = require('meow');
 const cli = meow(`
     Usage
-      $ npx migrate-textlint-scripts-typescript
+      $ npx @textlint/migrate-textlint-scripts-typescript
  
     Options
       --yarn  Use yarn if it is specified
  
     Examples
-      $ npx migrate-textlint-scripts-typescript --yarn
+      $ npx @textlint/migrate-textlint-scripts-typescript --yarn
 `, {
     flags: {
         yarn: {

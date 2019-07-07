@@ -26,13 +26,13 @@ Install with [npm](https://www.npmjs.com/):
 ## Usage
 
     Usage
-      $ npx migrate-textlint-scripts-typescript
+      $ npx @textlint/migrate-textlint-scripts-typescript
  
     Options
       --yarn  Use yarn if it is specified
  
     Examples
-      $ npx migrate-textlint-scripts-typescript --yarn
+      $ npx @textlint/migrate-textlint-scripts-typescript --yarn
 
 ## Changelog
 
