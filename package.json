@@ -28,7 +28,8 @@
   "files": [
     "bin/",
     "lib/",
-    "src/"
+    "src/",
+    "config"
   ],
   "directories": {
     "lib": "lib",
